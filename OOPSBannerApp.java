@@ -1,16 +1,25 @@
-
 /**
-* 0OPSBannerApp UC1 1
-00PS Banner Display Application
-*
-* This class demonstrates a simple Java application that displays the 0bject
-* Oriented Programming System OOPS acronym to the console.
-*
-* @author Developer
-* @version 1.0
-*/
+ * OOPSBannerApp UC2 - Banner Display Application
+ * * This class displays a stylized "OOPS" banner in the console.
+ * The spacing is carefully calibrated to match the visual layout 
+ * of the provided reference image.
+ * * @author Hrritika
+ * @version 2.1
+ */
 public class OOPSBannerApp {
+
     public static void main(String[] args) {
-        System.out.println("0OPS");
+        
+        // Line 1: Top caps of O, O, P and S
+        System.out.println("   ****    " + " " + "   ****    " + " " + "**********  "+ " " + "**********");
+        System.out.println(" **     ** " + " " + " **     ** " + " " + "*********** "+ " " + "**********");
+        System.out.println("**       **" + " " + "**       **" + " " + "**        **"+ " " + "**        ");
+        System.out.println("**       **" + " " + "**       **" + " " + "**        **"+ " " + "**        ");
+        System.out.println("**       **" + " " + "**       **" + " " + "**       ** "+ " " + "**********");
+        System.out.println("**       **" + " " + "**       **" + " " + "*********   "+ " " + "**********");
+        System.out.println("**       **" + " " + "**       **" + " " + "***         "+ " " + "        **");
+        System.out.println(" **     ** " + " " + " **     ** " + " " + "***         "+ " " + "        **");
+        System.out.println("   ****    " + " " + "   ****    " + " " + "***         "+ " " + "**********");
+
     }
 }
