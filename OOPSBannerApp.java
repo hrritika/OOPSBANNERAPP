@@ -6,7 +6,7 @@
  * array declaration and the String.join() method calls in a single statement,
  * we eliminate repetitive assignment lines, making the code much more concise.
  *
- * @author Nafees
+ * @author Hrritika
  * @version 5.0
  */
 public class OOPSBannerApp {
