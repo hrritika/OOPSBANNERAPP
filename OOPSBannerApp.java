@@ -1,46 +1,36 @@
 /**
- * OOPSBannerApp UC3 - Banner Display Application
+ * OOPSBannerApp UC4 - Banner Display Application
  *
  * This class demonstrates the creation of a visual banner displaying the word "OOPS"
- * using ASCII art composed of asterisks (*) and spaces.
+ * using ASCII art.
  *
  * Refactoring Note:
- * This version replaces string concatenation (+) with String.join() for better
- * memory efficiency and cleaner code structure.
+ * This version stores the banner lines in a String array and uses an enhanced for-loop
+ * to print them. This improves modularity and makes the code easier to maintain.
  *
  * @author Developer
- * @version 3.0
+ * @version 4.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
-        // UC3: Print "OOPS" using String.join() for efficiency
+        // UC4: Store lines in an array and use a loop to print
         
-        // Line 1
-        System.out.println(String.join("", "    ***    " , "    ***    " , " *******    "   , "    ***** "));
-        
-        // Line 2
-        System.out.println(String.join("", "  **   **  " , "  **   **  " , " **     **  "   , "  **      "));
-        
-        // Line 3
-        System.out.println(String.join("", " **     ** " , " **     ** " , " **      ** "   , "**        "));
-        
-        // Line 4
-        System.out.println(String.join("", " **     ** " , " **     ** " , " **     **  "   , " **       "));
-        
-        // Line 5
-        System.out.println(String.join("", " **     ** " , " **     ** " , " *******    "   , "   ***    "));
-        
-        // Line 6
-        System.out.println(String.join("", " **     ** " , " **     ** " , " **         "   , "      **  "));
-        
-        // Line 7
-        System.out.println(String.join("", " **     ** " , " **     ** " , " **         "   , "       ** "));
+        String[] bannerLines = {
+        String.join("", "    ***    " , "    ***    " , " *******    "   , "    ***** "),
+        String.join("", "  **   **  " , "  **   **  " , " **     **  "   , "  **      "),
+        String.join("", " **     ** " , " **     ** " , " **      ** "   , "**        "),
+        String.join("", " **     ** " , " **     ** " , " **     **  "   , " **       "),
+        String.join("", " **     ** " , " **     ** " , " *******    "   , "   ***    "),
+        String.join("", " **     ** " , " **     ** " , " **         "   , "      **  "),
+        String.join("", " **     ** " , " **     ** " , " **         "   , "       ** "),
+        String.join("", "  **   **  " , "  **   **  " , " **         "   , "     **   "),
+        String.join("", "    ***    " , "    ***    " , " **         "   , "*****     ")
+        };
 
-        //Line 8
-        System.out.println(String.join("", "  **   **  " , "  **   **  " , " **         "   , "     **   "));
-
-        //Line 9
-        System.out.println(String.join("", "    ***    " , "    ***    " , " **         "   , "*****     "));
+        // Enhanced for-loop to print each line
+        for (String line : bannerLines) {
+            System.out.println(line);
+        }
     }
 }
