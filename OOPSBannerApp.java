@@ -1,22 +1,19 @@
 /**
- * OOPSBannerApp UC4 - Banner Display Application
- *
- * This class demonstrates the creation of a visual banner displaying the word "OOPS"
- * using ASCII art.
+ * OOPSBannerApp UC5 - Banner Display Application
  *
  * Refactoring Note:
- * This version stores the banner lines in a String array and uses an enhanced for-loop
- * to print them. This improves modularity and makes the code easier to maintain.
+ * This iteration introduces inline array initialization. By combining the 
+ * array declaration and the String.join() method calls in a single statement,
+ * we eliminate repetitive assignment lines, making the code much more concise.
  *
- * @author Developer
- * @version 4.0
+ * @author Nafees
+ * @version 5.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
-        // UC4: Store lines in an array and use a loop to print
-        
-        String[] bannerLines = {
+        // UC5: Combine array declaration and initialization with String.join()
+        String[] bannerLines = new String[] {
         String.join("", "    ***    " , "    ***    " , " *******    "   , "    ***** "),
         String.join("", "  **   **  " , "  **   **  " , " **     **  "   , "  **      "),
         String.join("", " **     ** " , " **     ** " , " **      ** "   , "**        "),
@@ -28,7 +25,7 @@ public class OOPSBannerApp {
         String.join("", "    ***    " , "    ***    " , " **         "   , "*****     ")
         };
 
-        // Enhanced for-loop to print each line
+        // Enhanced for-loop to iterate through the array and display the pattern
         for (String line : bannerLines) {
             System.out.println(line);
         }
