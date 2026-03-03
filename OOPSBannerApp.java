@@ -1,19 +1,41 @@
 /**
- * OOPSBannerApp UC6 - Banner Display Application
+ * OOPSBannerApp UC7 - Banner Display Application
  *
  * Refactoring Note:
- * This iteration introduces static helper methods to encapsulate the ASCII 
- * patterns for individual characters (O, P, S). This adheres to the DRY 
- * (Don't Repeat Yourself) principle and improves modularity and reuse.
+ * This iteration introduces a static inner class `CharacterPatternMap` to encapsulate
+ * a character and its corresponding ASCII pattern. It uses constructors and getters
+ * for data management, and a StringBuilder to efficiently construct the final output.
  *
  * @author Hrritika
- * @version 6.0
+ * @version 7.0
  */
 public class OOPSBannerApp {
 
-    // Helper method to generate the letter 'O'
-    public static String[] getO() {
-        return new String[] {
+    // UC7: Static inner class to encapsulate character data and patterns
+    public static class CharacterPatternMap {
+        private char character;
+        private String[] pattern;
+
+        // Constructor
+        public CharacterPatternMap(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        // Getter for character
+        public char getCharacter() {
+            return character;
+        }
+
+        // Getter for pattern
+        public String[] getPattern() {
+            return pattern;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Instantiate the character map objects
+        CharacterPatternMap letterO = new CharacterPatternMap('O', new String[] {
             "    ***    ",
             "  **   **  ",
             " **     ** ",
@@ -23,12 +45,9 @@ public class OOPSBannerApp {
             " **     ** ",
             "  **   **  ",
             "    ***    "
-        };
-    }
+        });
 
-    // Helper method to generate the letter 'P'
-    public static String[] getP() {
-        return new String[] {
+        CharacterPatternMap letterP = new CharacterPatternMap('P', new String[] {
             " *******    ",
             " **     **  ",
             " **      ** ",
@@ -38,12 +57,9 @@ public class OOPSBannerApp {
             " **         ",
             " **         ",
             " **         "
-        };
-    }
+        });
 
-    // Helper method to generate the letter 'S'
-    public static String[] getS() {
-        return new String[] {
+        CharacterPatternMap letterS = new CharacterPatternMap('S', new String[] {
             "    ***** ",
             "  **      ",
             "**        ",
@@ -53,31 +69,22 @@ public class OOPSBannerApp {
             "       ** ",
             "     **   ",
             "*****     "
-        };
-    }
+        });
 
-    public static void main(String[] args) {
-        // Retrieve the character patterns from our static methods
-        String[] o = getO();
-        String[] p = getP();
-        String[] s = getS();
+        // Array representing the word "OOPS"
+        CharacterPatternMap[] wordToPrint = {letterO, letterO, letterP, letterS};
 
-        // UC6: Build the banner by combining the array lines
-        String[] bannerLines = new String[] {
-            String.join("", o[0], o[0], p[0], s[0]),
-            String.join("", o[1], o[1], p[1], s[1]),
-            String.join("", o[2], o[2], p[2], s[2]),
-            String.join("", o[3], o[3], p[3], s[3]),
-            String.join("", o[4], o[4], p[4], s[4]),
-            String.join("", o[5], o[5], p[5], s[5]),
-            String.join("", o[6], o[6], p[6], s[6]),
-            String.join("", o[7], o[7], p[7], s[7]),
-            String.join("", o[8], o[8], p[8], s[8])
-        };
-
-        // Enhanced for-loop to display the final stitched pattern
-        for (String line : bannerLines) {
-            System.out.println(line);
+        // UC7: Use StringBuilder to iterate and construct each line
+        for (int i = 0; i < 9; i++) {
+            StringBuilder lineBuilder = new StringBuilder();
+            
+            // Loop through each letter in the word array
+            for (CharacterPatternMap letter : wordToPrint) {
+                lineBuilder.append(letter.getPattern()[i]);
+            }
+            
+            // Print the fully constructed line
+            System.out.println(lineBuilder.toString());
         }
     }
 }
