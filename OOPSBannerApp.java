@@ -6,7 +6,7 @@
  * patterns for individual characters (O, P, S). This adheres to the DRY 
  * (Don't Repeat Yourself) principle and improves modularity and reuse.
  *
- * @author Nafees
+ * @author Hrritika
  * @version 6.0
  */
 public class OOPSBannerApp {
